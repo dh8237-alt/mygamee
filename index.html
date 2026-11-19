@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highway Rush - Traffic Racer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="game">
+
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- HUD -->
+    <div id="hud">
+        <div class="hud-box">
+            <span>SPEED</span>
+            <strong id="speed">0</strong>
+            <small>KM/H</small>
+        </div>
+
+        <div class="hud-box">
+            <span>SCORE</span>
+            <strong id="score">0</strong>
+        </div>
+
+        <div class="hud-box">
+            <span>DISTANCE</span>
+            <strong id="distance">0</strong>
+            <small>KM</small>
+        </div>
+
+        <div class="hud-box">
+            <span>LIVES</span>
+            <strong id="lives">❤️❤️❤️</strong>
+        </div>
+    </div>
+
+    <button id="pauseBtn" onclick="togglePause()">Ⅱ</button>
+
+    <!-- START SCREEN -->
+    <div class="screen" id="startScreen">
+        <h1>HIGHWAY <span>RUSH</span></h1>
+        <p class="subtitle">REALISTIC TRAFFIC RACER</p>
+
+        <div class="car-icon">🏎️</div>
+
+        <p>Drive fast. Avoid traffic. Survive.</p>
+
+        <button onclick="startGame()">START GAME</button>
+
+        <div class="instructions">
+            <p>⬅️ ➡️ STEER</p>
+            <p>⬆️ ACCELERATE</p>
+            <p>⬇️ BRAKE</p>
+        </div>
+    </div>
+
+    <!-- PAUSE SCREEN -->
+    <div class="screen hidden" id="pauseScreen">
+        <h1>PAUSED</h1>
+        <button onclick="togglePause()">RESUME</button>
+        <button onclick="restartGame()">RESTART</button>
+    </div>
+
+    <!-- GAME OVER -->
+    <div class="screen hidden" id="gameOverScreen">
+        <h1>GAME OVER</h1>
+        <p>YOUR FINAL SCORE</p>
+        <h2 id="finalScore">0</h2>
+        <p id="bestScore">BEST: 0</p>
+        <button onclick="restartGame()">PLAY AGAIN</button>
+        <button onclick="goHome()">MAIN MENU</button>
+    </div>
+
+    <!-- MOBILE CONTROLS -->
+    <div id="mobileControls">
+        <button id="leftBtn">◀</button>
+        <button id="brakeBtn">▼</button>
+        <button id="rightBtn">▶</button>
+        <button id="gasBtn">▲</button>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
